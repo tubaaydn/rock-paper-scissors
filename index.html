@@ -5,76 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
+
 <body>
-    <script>
-        
-        const choice = ["rock", "paper", "scissors"];
-        let player = 0;
-        let computer = 0;
-        
-
-        function getComputerChoice() {
-            return choice[Math.floor(Math.random() * choice.length)];
-            
-        }
-        
-        
-        function playRound(playerSelection, computerSelection) {
-            if(playerSelection === "rock") {
-                if (computerSelection === "paper") {
-                    computer++
-                    return "You Lose! Paper beats Rock";
-                } else if (computerSelection === "scissors") {
-                    player++
-                    return "You Win! Rock beats Scissors";
-                } else if (computerSelection === "rock") {
-                    return "It's a draw";
-                }
-            } else if(playerSelection === "paper") {
-                if (computerSelection === "rock") {
-                    player++
-                    return "You Win! Paper beats Rock";
-                } else if (computerSelection === "paper") {
-                    return "It's a draw";
-                } else if (computerSelection === "scissors") {
-                    computer++
-                    return "You Lose! Scissors beats Paper";
-                }
-            } else if(playerSelection === "scissors") {
-                if (computerSelection === "rock") {
-                    computer++
-                    return "You Lose! Rock beats Scissors";
-                } else if (computerSelection === "paper") {
-                    player++
-                    return "You Win! Scissors beats Paper";
-                } else if (computerSelection === "scissors") {
-                    return "It's a draw";
-                }
-            }
-        }
     
+   <div class ="player">
+    <div class="selections">
+        <button class="photos">
+            <img src="./photos/scissors.png">
+        </button>
+        <div class="photos">
+            <img src="./photos/paper.png">
+        </div>
+        <div class="photos">
+            <img src="./photos/rock.png">
+        </div>
+    </div>
+    <div class="text">Your point:</div>
+   </div>
+   
+    <div class="light-saber">
+        <div class="holder">
+            <img src="./photos/LightsaberNew.png">
+        </div>
+        <div class="blue-light">
+            <img src="./photos/blueLight.png">
+        </div>
+    </div>
+   
 
-        function game() {
-            for(let i = 0; i<5; i++) {
-                console.log("i",i);
-                let playerSelection =  prompt("What is your choice:", "");
-                console.log("prompt",playerSelection);
-                let computerSelection = getComputerChoice();
-                const message = playRound(playerSelection,computerSelection);
-                console.log("message:", message);
-                console.log("score: ", player, computer)
-            }
-            if (player>computer) {
-                console.log("result:", "Congratulations! You are the best!");
-            } else if (computer>player) {
-                console.log("result:", "Hey Human! You'll never beat computers!");
-            } else {
-                console.log("result:", "Too close but it's a draw!");
-            }
-        }
-        game();
-        
-    </script>
+   <div class="current-score">Score:</div>
+
+   <div class="light-saber">
+    <div class="red-light">
+        <img src="./photos/redLightNew.png">
+    </div>
+    <div class="holder2">
+        <img src="./photos/LightsaberNew.png">
+    </div>
+   </div>
+
+   <div class="computer">
+    <div class="text2">Computer point:</div>
+    <div class="selections">
+        <div class="photos">
+            <img src="./photos/rock.png">
+        </div>
+        <div class="photos">
+            <img src="./photos/paper.png">
+        </div>
+        <div class="photos">
+            <img src="./photos/scissors.png">
+        </div>
+    </div>
+   </div>
 </body>
 </html>
